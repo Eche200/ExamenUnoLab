@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1538697126 source:/home/alumno/EXAMEN/EXAMEN_LAB1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"AfichesVendidos.h"
+	"ClientesAfiches.h"
+	"Clientes.h"
+
+1538698169 source:/home/alumno/EXAMEN/EXAMEN_LAB1/AfichesVendidos.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"AfichesVendidos.h"
+	"Clientes.h"
+	"ClientesAfiches.h"
+	"FuncionesParaTodo.h"
+
+1538696490 source:/home/alumno/EXAMEN/EXAMEN_LAB1/Clientes.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Clientes.h"
+	"AfichesVendidos.h"
+	"ClientesAfiches.h"
+	"FuncionesParaTodo.h"
+
+1538698265 /home/alumno/EXAMEN/EXAMEN_LAB1/AfichesVendidos.h
+	"Clientes.h"
+
+1538696528 /home/alumno/EXAMEN/EXAMEN_LAB1/Clientes.h
+	"AfichesVendidos.h"
+
+1538696050 /home/alumno/EXAMEN/EXAMEN_LAB1/ClientesAfiches.h
+
+1538694044 /home/alumno/EXAMEN/EXAMEN_LAB1/FuncionesParaTodo.h
+
+1538696983 source:/home/alumno/EXAMEN/EXAMEN_LAB1/ClientesAfiches.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"AfichesVendidos.h"
+	"Clientes.h"
+	"ClientesAfiches.h"
+	"FuncionesParaTodo.h"
+
+1538694074 source:/home/alumno/EXAMEN/EXAMEN_LAB1/FuncionesParaTodo.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"AfichesVendidos.h"
+	"Clientes.h"
+	"ClientesAfiches.h"
+	"FuncionesParaTodo.h"
+

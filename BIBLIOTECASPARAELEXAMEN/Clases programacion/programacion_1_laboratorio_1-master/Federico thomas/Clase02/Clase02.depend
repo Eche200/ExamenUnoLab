@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535065272 source:/home/alumno/Documentos/Federico thomas/Clase02/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+

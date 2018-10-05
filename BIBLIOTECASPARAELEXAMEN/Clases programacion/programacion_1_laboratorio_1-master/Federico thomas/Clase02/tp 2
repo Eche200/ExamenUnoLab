@@ -1,0 +1,18 @@
+#include <stdio_ext.h>
+#include <stdlib.h>
+
+#define LIMITE_ARRAY 5
+
+int main()
+{
+    int numero[LIMITE_ARRAY];
+    int promedio;
+
+    for(int i=0;i=LIMITE_ARRAY;i++)
+    {
+        printf("\ningrese numero: %d",i++);
+    }
+
+
+}
+
