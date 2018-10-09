@@ -36,23 +36,18 @@ int UTN_initClientes(Clientes arrayDeClientes[],int indice, int limiteDeArrayDeC
 
 
 /** \brief esta funcion recibe por parametro un array , un indice , un limite , idCliente, name, lastName,cuit.
- *el array es donde se  haran las operaciones para dar de alta  una venta ,el indice es donde empezara la iteracion, el limite es la cantidad maxima de  afiches vendidos que puedo vender,
- *le pasaremos  nombre nombre multimedia, el IDdelAficheVendido , cantidad De Afiches que venderemos en esa venta, zona donde se colocara  y
- *y el array de empleados para ver si el cliente existe , si no existe , no haremos la venta.
- *
+ *el array es donde se  haran las operaciones para dar de alta  una venta ,el indice es donde empezara la iteracion, el limite es la cantidad maxima de  Clientes ,
+ *le pasaremos  nombre nombre del clientes , su id , su apellido y cuit
  *buscaremos que en el array haya un lugar donde el isEmpty este en 1 (osea vacio) pero tambien el id sea -1 , ya que puede estar dado de baja , pero no hay que borrarlo
  * sino que solo darlo de baja , por eso buscamos tambien el ID -1
- *
- * \param AfichesVendidos arrayDeAfichesVendidos[]
- * \param indice cantidad
- * \param limiteDeArrayDeEmpleados
- * \param idAfichesVendidos
- * \param nombreDelArchivos
- * \param cantidadDeAfiches
- * \param zona
- * \param arrayDeClientesVoid[]
+ * \param Clientes arrayDeClientes[]
+ * \param indice
+ * \param limiteDeArrayDeClientes
+ * \param idCliente
+ * \param name
+ * \param lastName
+ * \param cuit
  * \return int Return (-1) si hubo error- (0) if Ok
- *
  */
 
 
@@ -132,21 +127,14 @@ int UTN_modificarClientes(Clientes arrayDeClientes[],int indice , int limiteDeAr
                         printf("\ningrese el cuit \n");
                         if(utn_getString(cuit,20) == 0 && utn_isValidNombre(cuit , 20) == 1)
                         {
-
                                 __fpurge(stdin);
-
                                 strncpy(arrayDeClientes[i].nombre , nombre ,51);
                                 arrayDeClientes[i].cuit = atoi(cuit);
                                 strncpy(arrayDeClientes[i].apellido , apellido ,51);
                                 retorno = 0;
-
                         }
                     }
                 }
-
-
-
-
             }
         }
     }

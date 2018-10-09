@@ -19,4 +19,6 @@ int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int in
 
 int  UTN_obtenerSiguienteIdDeAfichesVendidos();
 
+void listarClientes(AfichesVendidos arrayDeAfichesVendidos[] , int indice , int limite );
+
 #endif // AFICHESVENDIDOS_H_INCLUDED

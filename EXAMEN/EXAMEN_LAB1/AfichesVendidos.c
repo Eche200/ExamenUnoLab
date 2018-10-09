@@ -207,12 +207,22 @@ int UTN_removeAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[], int indi
 
 
 
-
-void listarClientes()
+//esto imprime todooooooooooooooooo
+void listarClientes(AfichesVendidos arrayDeAfichesVendidos[] , int indice , int limite )
 {
+    int i;
 
 
+    if(arrayDeAfichesVendidos != NULL && indice < limite && limite > 0)
+    {
+        for( i = indice ; i < limite ; i ++)
+        {
+            printf("%d\t%s\t%s\t%d\n" , arrayDeAfichesVendidos[i].idAficheVendido , arrayDeAfichesVendidos[i].zona , arrayDeAfichesVendidos[i].nombreDelArchivo ,
+                    arrayDeAfichesVendidos[i].cantidadDeAfichesAVender);
 
+        }
+
+    }
 }
 
 
