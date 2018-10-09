@@ -12,8 +12,8 @@ typedef struct sAfichesVendidos
 
 int UTN_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice, int limiteDeArrayDeAfichesVendidos);
 
-int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,int limiteDeArrayDeAfichesVendidos,int idAfichesVendidos, char* nombreDelArchivos,char*
-lastName,char* cantidadDeAfiches,char* zona , void* arrayDeClientesVoid);
+int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,int limiteDeArrayDeAfichesVendidos,int idAfichesVendidos, char* nombreDelArchivos,
+                           char* cantidadDeAfiches,char* zona , void* arrayDeClientesVoid);
 int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice , int limiteDeArrayDeAfichesVendidos, int idDeAfichesVendidosAModificar);
 
 

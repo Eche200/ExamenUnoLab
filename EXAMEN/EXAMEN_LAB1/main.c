@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "AfichesVendidos.h"
-#include "ClientesAfiches.h"
+
 #include "Clientes.h"
 int main()
 {/*

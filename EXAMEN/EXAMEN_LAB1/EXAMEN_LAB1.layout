@@ -7,29 +7,9 @@
 			<Cursor1 position="85" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="AfichesVendidos.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8375" topLine="18" />
-		</Cursor>
-	</File>
 	<File name="ClientesAfiches.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="129" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ClientesAfiches.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3003" topLine="51" />
-		</Cursor>
-	</File>
-	<File name="FuncionesParaTodo.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="217" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="597" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="AfichesVendidos.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -39,7 +19,27 @@
 	</File>
 	<File name="Clientes.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6113" topLine="153" />
+			<Cursor1 position="6113" topLine="147" />
+		</Cursor>
+	</File>
+	<File name="AfichesVendidos.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8375" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="ClientesAfiches.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3003" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="597" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="FuncionesParaTodo.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="217" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

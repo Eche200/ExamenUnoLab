@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include "AfichesVendidos.h"
 #include "Clientes.h"
-#include "ClientesAfiches.h"
+
 #include "FuncionesParaTodo.h"
 
 

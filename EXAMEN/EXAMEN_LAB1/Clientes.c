@@ -4,15 +4,16 @@
 #include <ctype.h>
 #include "Clientes.h"
 #include "AfichesVendidos.h"
-#include "ClientesAfiches.h"
+
 #include "FuncionesParaTodo.h"
-/** \brief esta funcion recibe por parametro un array y un limite
- *el array es donde se  haran las operaciones , y la cantidad maxima de  empleados que puedo almacenar
- *inicializo todos  empleados del array poniendo el atributo .isEmpty en 1 para indicar  que esta vacio tambien ponemos el ID en -1 , para que luego al dar de alta a un empleado
+/** \brief esta funcion recibe por parametro un array,un inicio y un limite
+ *el array es donde se  haran las operaciones , el indice es donde empezara  a ejecutarse el FOR y la cantidad maxima de  lugares que puedo inicializar
+ *inicializo todos  Afiches vendidos del array poniendo el atributo .isEmpty en 1 para indicar  que esta vacio tambien ponemos el ID en -1 , para que luego al dar de alta a un afiche vendido
  * podamos evaluar , no solo  si esta de baja sino que  jamas se cargara un dato en el , ya que no debemos borrar nunca a nadie , solo dar de baja.
- * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
- * \param limiteDeArrayDeEmpleados cantidad maxima del array
- * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ * \param Clientes arrayDeClientes[] es el  array de clientes que le paso como parametro
+ *\param indice es donde empezara a  contar  la iteracion
+ * \param limiteDeArrayDeClientes cantidad maxima del array
+ * \return int Return (-1) si hubo algun error- (0) if Ok
  *
  */
 
@@ -34,14 +35,23 @@ int UTN_initClientes(Clientes arrayDeClientes[],int indice, int limiteDeArrayDeC
 }
 
 
-/** \brief esta funcion recibe por parametro un array y un limite
- *el array es donde se  haran las operaciones , y el limite la cantidad maxima de  empleados que puedo almacenar
- *le pasaremos un nombre, apellido , saldo , sector ,  y daremos de alta un empleado y le pondremos un ID UNICO y pondremos que isEmpty es 0 porque esta lleno
- *buscaremos que en el array haya un lugar donde el isEmpty este en 1 (osea vacio) pero tambien el ide sea -1 , ya que puede estar dado de baja , pero no hay que borrarlo
+/** \brief esta funcion recibe por parametro un array , un indice , un limite , idCliente, name, lastName,cuit.
+ *el array es donde se  haran las operaciones para dar de alta  una venta ,el indice es donde empezara la iteracion, el limite es la cantidad maxima de  afiches vendidos que puedo vender,
+ *le pasaremos  nombre nombre multimedia, el IDdelAficheVendido , cantidad De Afiches que venderemos en esa venta, zona donde se colocara  y
+ *y el array de empleados para ver si el cliente existe , si no existe , no haremos la venta.
+ *
+ *buscaremos que en el array haya un lugar donde el isEmpty este en 1 (osea vacio) pero tambien el id sea -1 , ya que puede estar dado de baja , pero no hay que borrarlo
  * sino que solo darlo de baja , por eso buscamos tambien el ID -1
- * \param Empleado arrayDeEmpleados[] es el  array que le paso como parametro
- * \param limiteDeArrayDeEmpleados cantidad maxima del array
- * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
+ * \param AfichesVendidos arrayDeAfichesVendidos[]
+ * \param indice cantidad
+ * \param limiteDeArrayDeEmpleados
+ * \param idAfichesVendidos
+ * \param nombreDelArchivos
+ * \param cantidadDeAfiches
+ * \param zona
+ * \param arrayDeClientesVoid[]
+ * \return int Return (-1) si hubo error- (0) if Ok
  *
  */
 

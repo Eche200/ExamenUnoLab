@@ -39,10 +39,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Clientes.h" />
-		<Unit filename="ClientesAfiches.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ClientesAfiches.h" />
 		<Unit filename="FuncionesParaTodo.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -53,6 +49,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
