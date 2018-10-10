@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="FuncionesParaTodo.h" />
+		<Unit filename="Informar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Informar.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

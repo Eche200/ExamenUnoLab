@@ -4,21 +4,25 @@
 typedef struct sAfichesVendidos
 {
     int idAficheVendido;
+    int idCliente;
+    int cobrado;
     int isEmpty;
     int cantidadDeAfichesAVender;
     char nombreDelArchivo[51];
     char zona[20];
 }AfichesVendidos;
 
-int UTN_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice, int limiteDeArrayDeAfichesVendidos);
+int AfiVend_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice, int limiteDeArrayDeAfichesVendidos);
 
-int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,int limiteDeArrayDeAfichesVendidos,int idAfichesVendidos, char* nombreDelArchivos,
-                           char* cantidadDeAfiches,char* zona , void* arrayDeClientesVoid);
-int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice , int limiteDeArrayDeAfichesVendidos, int idDeAfichesVendidosAModificar);
+int AfiVend_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,int limiteDeArrayDeAfichesVendidos,int idAfichesVendidos, char* nombreDelArchivos,
+                            char* cantidadDeAfiches,int idCliente ,char* zona , void* arrayDeClientesVoid);
+int AfiVend_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice , int limiteDeArrayDeAfichesVendidos, int idDeAfichesVendidosAModificar);
 
+int AfiVend_CobrarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[], int indice , int limiteDeArrayDeAfichesVendidos);
 
-int  UTN_obtenerSiguienteIdDeAfichesVendidos();
+int  AfiVend_obtenerSiguienteIdDeAfichesVendidos();
 
-void listarClientes(AfichesVendidos arrayDeAfichesVendidos[] , int indice , int limite );
+void AfiVend_ordenarAfichesDeMenosAMayor(AfichesVendidos arrayDeAfichesVendidos[] , int limite );
+
 
 #endif // AFICHESVENDIDOS_H_INCLUDED

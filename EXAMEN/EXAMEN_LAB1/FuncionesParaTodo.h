@@ -13,7 +13,7 @@ int utn_isValidNombre(char* pBuffer , int limite);
 
 int utn_getString(char* pBuffer, int limite);
 
-
+void showMenu();
 
 
 #endif // FUNCIONESPARATODO_H_INCLUDED

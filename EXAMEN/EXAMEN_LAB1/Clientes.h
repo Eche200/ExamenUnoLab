@@ -11,13 +11,17 @@ typedef struct sClientes
     int cuit;
 }Clientes;
 
-int UTN_initClientes(Clientes arrayDeClientes[],int indice, int limiteDeArrayDeClientes);
-int UTN_modificarClientes(Clientes arrayDeClientes[],int indice , int limiteDeArrayDeClientes, int idDeClientesAModificar);
-int UTN_removeCliente(Clientes arrayDeClientes[], int indice , int limiteDeArrayDeClientes, int idDeClientesABorrar);
+int Clientes_initClientes(Clientes arrayDeClientes[],int indice, int limiteDeArrayDeClientes);
+int Clientes_modificarClientes(Clientes arrayDeClientes[],int indice , int limiteDeArrayDeClientes, int idDeClientesAModificar);
+int Clientes_removeCliente(Clientes arrayDeClientes[], int indice , int limiteDeArrayDeClientes, int idDeClientesABorrar);
 
-int UTN_addClientes(Clientes arrayDeClientes[],int indice ,int limiteDeArrayDeClientes,int idCliente, char* name,char*
+int Clientes_addClientes(Clientes arrayDeClientes[],int indice ,int limiteDeArrayDeClientes,int idCliente, char* name,char*
 lastName,char* cuit);
-int  UTN_obtenerSiguienteIdDeClientes();
+int  Clientes_obtenerSiguienteIdDeClientes();
+
+void Clientes_ordenarClientesDeMenosAMayor(Clientes arrayDeClientes[] , int limite );
+int clientesGetById(Clientes arrayDeCliente[] , int limite);
+
 
 #endif // AFICHESVENDIDOS_H_INCLUDED
 

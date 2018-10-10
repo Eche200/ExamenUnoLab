@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include "AfichesVendidos.h"
 #include "Clientes.h"
-
+#include "Informar.h"
 #include "FuncionesParaTodo.h"
 /** \brief esta funcion recibe por parametro un array,un inicio y un limite
  *el array es donde se  haran las operaciones , el indice es donde empezara  a ejecutarse el FOR y la cantidad maxima de  lugares que puedo inicializar
@@ -17,7 +17,7 @@
  *
  */
 
-int UTN_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice, int limiteDeArrayDeAfichesVendidos)
+int AfiVend_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice, int limiteDeArrayDeAfichesVendidos)
 {
     int retorno =-1;
     int i;
@@ -34,14 +34,13 @@ int UTN_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice,
 }
 
 
+
 /** \brief esta funcion recibe por parametro un array , un indice , un limite , idAfichesVendidos,nombreDelArchivos,cantidadDeAfiches,zona,arrayDeClientesVoid
  *el array es donde se  haran las operaciones para dar de alta  una venta ,el indice es donde empezara la iteracion, el limite es la cantidad maxima de  afiches vendidos que puedo vender,
  *le pasaremos  nombre nombre multimedia, el IDdelAficheVendido , cantidad De Afiches que venderemos en esa venta, zona donde se colocara  y
  *y el array de empleados para ver si el cliente existe , si no existe , no haremos la venta.
- *
  *buscaremos que en el array haya un lugar donde el isEmpty este en 1 (osea vacio) pero tambien el id sea -1 , ya que puede estar dado de baja , pero no hay que borrarlo
  * sino que solo darlo de baja , por eso buscamos tambien el ID -1
- *
  * \param AfichesVendidos arrayDeAfichesVendidos[]
  * \param indice cantidad
  * \param limiteDeArrayDeEmpleados
@@ -54,8 +53,8 @@ int UTN_initAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice,
  *
  */
 
-int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,int limiteDeArrayDeAfichesVendidos,int idAfichesVendidos, char* nombreDelArchivos
-,char* cantidadDeAfiches,char* zona , void* arrayDeClientesVoid)
+int AfiVend_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,int limiteDeArrayDeAfichesVendidos,int idAfichesVendidos, char* nombreDelArchivos,
+char* cantidadDeAfiches, int idCliente ,char* zona , void* arrayDeClientesVoid)
 {
     Clientes* arrayDeClientes = arrayDeClientesVoid;
     int retorno = -1;
@@ -90,6 +89,8 @@ int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,
                                     {
                                         __fpurge(stdin);
                                         arrayDeAfichesVendidos[i].idAficheVendido = idAfichesVendidos;
+                                        arrayDeAfichesVendidos[i].idAficheVendido = idCliente;
+                                        arrayDeAfichesVendidos[i].cobrado=1;
                                         arrayDeAfichesVendidos[i].isEmpty = 0;
                                         strncpy(arrayDeAfichesVendidos[i].nombreDelArchivo , nombreDelArchivos ,51);
                                         arrayDeAfichesVendidos[i].cantidadDeAfichesAVender = atof(cantidadDeAfiches);
@@ -108,10 +109,6 @@ int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,
     }
     return retorno;
 }
-
-
-
-
 /** \brief esta funcion recibe por parametro un array ,un indice ,un limiteDeArrayDeAfichesVendidos y un identificador unico
  *el array es donde se  haran las operaciones , la cantidad maxima de  afiches que puedo vender , el id de la venta y un indice para empezar a iterar desde ahi
  *con esos datos  mas el ID que nos pase , podemos  saber si existe en el array y si existe lo podremos modificar.
@@ -121,10 +118,7 @@ int UTN_addAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice ,
  *\param indice
  * \return int Return (-1)si hubo un error - (0) if Ok
  */
-
-
-
-int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice , int limiteDeArrayDeAfichesVendidos, int idDeAfichesVendidosAModificar )
+int AfiVend_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int indice , int limiteDeArrayDeAfichesVendidos, int idDeAfichesVendidosAModificar )
 {
     int retorno = -1;
     int i;
@@ -144,7 +138,6 @@ int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int in
                     printf("\ningrese Cantidad de afiches a comprar \n");
                     if(utn_getString(cantidadDeAfiches , 6) == 0 && utn_isValidInt(cantidadDeAfiches , 6) == 1 )
                     {
-
                         __fpurge(stdin);
                         printf("\ningrese La zona donde se pondra el afiche\n");
                         if(utn_getString(zona,20) == 0 && utn_isValidNombre(zona , 20) == 1)
@@ -161,9 +154,6 @@ int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int in
     }
     return retorno;
 }
-
-
-
 /** \brief esta funcion recibe por parametro un array ,un indice ,un limiteDeArrayDeAfichesVendidos y un identificador unico
  *el array es donde se  haran las operaciones , la cantidad maxima de  afiches que puedo vender , el id de la venta y un indice para empezar a iterar desde ahi
  *con esos datos  mas el ID que nos pase , podemos  saber si existe en el array y si existe lo podremos dar de baja esa compra.
@@ -173,14 +163,12 @@ int UTN_modificarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[],int in
  *\param indice
  * \return int Return (-1)si hubo un error - (0) if Ok
  */
-
-
-int UTN_removeAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[], int indice , int limiteDeArrayDeAfichesVendidos, int idDeAfichesVendidosABorrar)
+int AfiVend_CobrarAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[], int indice , int limiteDeArrayDeAfichesVendidos)
 {
     int retorno = -1;
     int i;
     char idDeVentaBuffer[1000];
-    if(arrayDeAfichesVendidos != NULL && limiteDeArrayDeAfichesVendidos > 0 && idDeAfichesVendidosABorrar)
+    if(arrayDeAfichesVendidos != NULL && limiteDeArrayDeAfichesVendidos > 0 )
     {
         __fpurge(stdin);
         printf("\ningrese el ID de la venta  \n");
@@ -188,9 +176,10 @@ int UTN_removeAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[], int indi
         {
             for( i = indice; i < limiteDeArrayDeAfichesVendidos ; i++)
             {
-                if(atoi(idDeVentaBuffer) == arrayDeAfichesVendidos[i].idAficheVendido)
+                if(atoi(idDeVentaBuffer) == arrayDeAfichesVendidos[i].idAficheVendido && arrayDeAfichesVendidos[i].cobrado == 1)
                 {
                     arrayDeAfichesVendidos[i].isEmpty = 1;
+                    arrayDeAfichesVendidos[i].cobrado = 0 ;
                     retorno = 0;
                     break;
                 }
@@ -206,24 +195,51 @@ int UTN_removeAfichesVendidos(AfichesVendidos arrayDeAfichesVendidos[], int indi
 
 
 
-
-//esto imprime todooooooooooooooooo
-void listarClientes(AfichesVendidos arrayDeAfichesVendidos[] , int indice , int limite )
+/** \brief recibe como parametros un array de tipo afichesvendidos y un limite hasta donde debe  iterar.
+*agarra un array de tipo AfichesVendido y lo ordena de menor a mayor , asi luego
+*a la hora de los informes es mas facil encontrar en orden las cosas y  poder llevar un mejor conteo de lo pedido
+*\param AfichesVendidos arrayDeAfichesVendidos[]
+*\param limite
+* \return no devuelve nada
+*/
+void AfiVend_ordenarAfichesDeMenosAMayor(AfichesVendidos arrayDeAfichesVendidos[] , int limite )
 {
     int i;
-
-
-    if(arrayDeAfichesVendidos != NULL && indice < limite && limite > 0)
+    int j;
+    int auxDeId;
+    int auxIsEmpty;
+    int auxCantidadDeAfichesAVender;
+    int auxAfichesCobrados;
+    char auxNombreDelArchivo[51];
+    char auxZona[20];
+    for (i = 1; i < limite ; i++)
     {
-        for( i = indice ; i < limite ; i ++)
+        auxDeId = arrayDeAfichesVendidos[i].idAficheVendido;
+        auxIsEmpty = arrayDeAfichesVendidos[i].isEmpty;
+        auxCantidadDeAfichesAVender= arrayDeAfichesVendidos[i].cantidadDeAfichesAVender;
+        auxAfichesCobrados = arrayDeAfichesVendidos[i].cobrado;
+        strncpy(auxNombreDelArchivo,arrayDeAfichesVendidos[i].nombreDelArchivo , 51);
+        strncpy(auxZona, arrayDeAfichesVendidos[i].zona , 20  );
+        for (j = i; j > 0 && arrayDeAfichesVendidos[j - 1].idAficheVendido > auxDeId; j--)
         {
-            printf("%d\t%s\t%s\t%d\n" , arrayDeAfichesVendidos[i].idAficheVendido , arrayDeAfichesVendidos[i].zona , arrayDeAfichesVendidos[i].nombreDelArchivo ,
-                    arrayDeAfichesVendidos[i].cantidadDeAfichesAVender);
-
+            arrayDeAfichesVendidos[j].idAficheVendido = arrayDeAfichesVendidos[j - 1].idAficheVendido;
+            arrayDeAfichesVendidos[j].isEmpty = arrayDeAfichesVendidos[j - 1].isEmpty;
+            arrayDeAfichesVendidos[j].cantidadDeAfichesAVender = arrayDeAfichesVendidos[j - 1].cantidadDeAfichesAVender;
+            arrayDeAfichesVendidos[j].cobrado = arrayDeAfichesVendidos[j - 1].cobrado;
+            strncpy(arrayDeAfichesVendidos[j].nombreDelArchivo,arrayDeAfichesVendidos[j - 1].nombreDelArchivo , 51);
+            strncpy(arrayDeAfichesVendidos[j].zona, arrayDeAfichesVendidos[j - 1].zona , 20  );
         }
-
+        arrayDeAfichesVendidos[j].idAficheVendido = auxDeId;
+        arrayDeAfichesVendidos[j].isEmpty = auxIsEmpty;
+        arrayDeAfichesVendidos[j].cantidadDeAfichesAVender = auxCantidadDeAfichesAVender;
+        arrayDeAfichesVendidos[i].cobrado = auxAfichesCobrados;
+        strncpy(arrayDeAfichesVendidos[j].nombreDelArchivo,auxNombreDelArchivo, 51);
+        strncpy(arrayDeAfichesVendidos[j].zona, auxZona , 20  );
     }
 }
+
+
+
 
 
 
@@ -234,9 +250,7 @@ void listarClientes(AfichesVendidos arrayDeAfichesVendidos[] , int indice , int 
  * \return devuelve el siguiente ID
  *
  */
-
-
-int  UTN_obtenerSiguienteIdDeAfichesVendidos()
+int  AfiVend_obtenerSiguienteIdDeAfichesVendidos()
 {
     static int idDeAfichesVendidos=0;
     idDeAfichesVendidos++;
